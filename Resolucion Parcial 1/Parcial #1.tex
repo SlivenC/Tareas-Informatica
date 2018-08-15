@@ -1,0 +1,126 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\author{Sliven Carranza}
+\begin{document}
+\begin{center}
+        \huge{Examen Parcia Resolucion \#1} \\
+        \large{Sliven Macario Antonio Carranza Briones} \\
+        \large{20181393} \\
+\end{center}
+\section{Pregunta \#1 (20\%)}
+El famoso matematico Euler hizo la siguiente pregunta: Es posible curzar todos los puentes
+de K\"onigsberg sin pasar dos veces por el mismo puente? A continuaci\'on se muestra un
+mapa de los puentes de K\"onigsberg:
+\begin{itemize}
+        \item{Definir el conjunto de nodos} \\\\
+        $\langle 1 , 2 , 3 , 4 , 5 , 6 ,7 \rangle$  \\\\
+        \item{Definir el conjunto de vertices}      
+\end{itemize}
+\[
+ Vertices= \begin {bmatrix}
+\langle 1, 5 \rangle & \langle 5, 6 \rangle & \langle 1, 2 \rangle & \langle 1, 4 \rangle  & \langle 1, 3 \rangle \\ 
+\langle 1, 6 \rangle & \langle 2, 3 \rangle & \langle 2, 5 \rangle & \langle 2, 4 \rangle  & \langle 2, 6 \rangle \\
+\langle 3, 6 \rangle & \langle 3, 4 \rangle & \langle 3, 7 \rangle & \langle 5, 7 \rangle  & \langle 6, 7 \rangle \\
+\langle 7, 4 \rangle & \langle  3, 5 \rangle 
+\end {bmatrix}
+\] \\
+\section*{Pregunta \#2 (20\%)}
+Demostrar utilizando inducci\'on que la formula de Gauss para sumatorias es correcta:
+\[
+        \sum_{i=1}^{n}{i}=\frac{n(n+1)}{2}
+\]
+donde $\sum_{i=1}^{n}i=1+2+3+4+\ \ldots\ +n$.
+\\\\
+Para esta demostraci\'on, su caso base debe ser
+$n=1$ en vez de $n=0$. Sin embargo, la demostraci\'on
+del caso inductivo procede de la misma forma que
+se ha estudiado en clase.
+\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+Demostracion:
+\begin{itemize}
+        \item{Caso Base}
+        n=1 
+            \[ \sum_{i=1}^{n}{i}=\frac{n(n+1)}{2} \] \\
+            \[1 =\frac{1(1+1)}{2}  \]\\
+            \[ 1 =\frac{1(2)}{2} \] \\
+              \[ 1 =\frac{(2)}{2} \] \\
+              \[ 1 = 1  \] \\
+        \item{Caso inductivo n+1}
+            \[ \sum_{i=1}^{n+1}{i}=\frac{(n+1)(n+1+1)}{2} \] \\
+            \[ \sum_{i=1}^{n}{i}+(n+1)=\frac{(n+1)(n+2)}{2} \] \\
+Esto es igual a:
+            \[\frac{n(n+1)}{2} + (n+1)  =\frac{(n+1)(n+2)}{2} \] \\
+            \[\frac{n(n+1)+2(n+1)} {2}   =\frac{(n+1)(n+2)}{2} \] \\
+            \[\frac{n^2 +n +2n+2} {2}   =\frac{n^2 +2n +n+2}{2} \] \\
+           \[\frac{n^2 +3n+2} {2}   =\frac{n^2 +3n+2}{2} \] \\
+\end{itemize}
+\section*{Pregunta \#3 (20\%)}
+Definir inductivamente la funcion $\sum(n)$ para numeros naturales unarios la cual tiene
+el efecto de calcular la suma de $1$ hasta $n$. En otras palabras:
+\[
+        \sum(n)=1+2+3+4+\ \ldots\ +n
+\]
+Puede apoyarse de la suma $\oplus$ de numeros naturales unarios para su definici\'on:
+\[
+        a\oplus b =
+                \left\{
+                        \begin{array}{ll}
+                                b  & \mbox{si } a = 0 \\
+                                s(i\oplus b) & \mbox{si } a = s(i)
+                        \end{array}
+                \right.
+\]
+Demostracion:  i= 1 , n=2 \\
+        \[ \sum(n)=(s(i) + i) \]
+        \[ 2  =  (1+1)  \]
+        \[ 2  =  (2)  \]
+    Respuesta:  \[ \sum(n)=(s(i) + i) \]
+    
+\section*{Pregutna \# 4 (20\%)}
+Demostrar por medio de inducci\'on la comutatividad de la suma de
+numeros naturales unarios: $a\oplus b = b\oplus a$ \\ \\
+Demostracion\\ \\
+a = s(0)\\
+b =s( s(0))\\
+$a\oplus b = b\oplus a$ \\
+$s(0) \oplus s( s(0)) = s(s(0)) \oplus  s(0), $ \\
+$s(s(0)) \oplus  s(0) = s(ss(0)) \oplus  0, $\\
+$s(ss(0)) \oplus  0 = s(ss(0))  $\\
+$s(ss(0)) = s(ss(0))  $\\
+
+\section*{Pregunta \#5 (20\%)}
+Dada la funci\'on $a\geq b$ para numeros naturales unarios:
+\[
+        a\geq b =
+                \left\{
+                        \begin{array}{ll}
+                                s(o)  & \mbox{si } b = o \\
+                                o & \mbox{si } a = o \\
+                                i\geq j & \mbox{si } a = s(i)\ \&\ b = s(j)
+                        \end{array}
+                \right.
+\]
+Demostrar utilizando inducci\'on que $((n\oplus n)\geq n) = s(o)$. Puede
+hacer uso de la asociatividad y comutabilidad de la suma de numeros
+unarios para su demostraci\'on.  \\\\
+Demostracion\\
+Caso Base: 
+n=0\\ 
+$((n\oplus n)\geq n) = s(o)$ \\
+$((0\oplus 0)\geq 0) = 0$ \\
+$((0\oplus 0)\geq 0) = 0$ \\
+$(0) = 0$ \\
+
+Caso Inductivo \\
+$((n\oplus n)\geq n) = s(0)$ \\
+$((i \oplus j )\geq s(j)) = s(0)$ \\
+$((n\oplus n)\geq s(i)) = s(0)$ \\
+$(0)\geq s(i)) = s(0)$ \\
+$(0)\geq s(i)) = s(0)$ \\
+Dado las desigualdades de los numeros unarios:   
+$ s(0) = s(0)$ \\
+
+\end{document}
